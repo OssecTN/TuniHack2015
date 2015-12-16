@@ -1,0 +1,360 @@
+<script type="text/javascript" src="js/raphael-min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.touchwipe.min.js"></script>
+    <script type="text/javascript" src="js/md_slider.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sidr.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tweet.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+<header id="header">
+        <div class="wrap-top-menu">
+            <div class="container_12 clearfix">
+                <div class="grid_12">
+                    <nav class="top-menu">
+                        <ul id="main-menu" class="nav nav-horizontal clearfix">
+                            <li class="active" ng-repeat="x in menu" style="cursor:pointer"><a href="/tuninvest/HTML/#/{{x.name}}">{{x.name}}</a></li>
+                        </ul>
+                        <a id="btn-toogle-menu" class="btn-toogle-menu" href="#alternate-menu">
+                            <span class="line-bar"></span>
+                            <span class="line-bar"></span>
+                            <span class="line-bar"></span>
+                        </a>
+                       
+                    </nav>
+                    
+                </div>
+            </div>
+        </div><!-- end: .wrap-top-menu -->
+        <div class="container_12 clearfix">
+            <div class="grid_12 header-content">
+                <div id="sys_header_right" class="header-right">
+                    <div class="account-panel" ng-show="access">
+                        <p>{{$scope.publicuser.name}}</p>
+                    </div>
+                    <div class="account-panel" ng-show="!access">
+                        <a href="#" class="btn btn-red sys_show_popup_login">Register</a>
+                        <a class="btn btn-black sys_show_popup_login">Login</a>
+                    </div>
+                    <div class="form-search">
+                        <form action="#">
+                            <label for="sys_txt_keyword">
+                                <input id="sys_txt_keyword" class="txt-keyword" type="text" placeholder="Search projects"/>
+                            </label>
+                            <button class="btn-search" type="reset"><i class="icon iMagnifier"></i></button>
+                            <button class="btn-reset-keyword" type="reset"><i class="icon iXHover"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <h1 id="logo">
+                        <a href="index.html"><img src="images/logo.png" style="margin-top:-15px;" alt="$SITE_NAME"/></a>
+                    </h1>
+                    <div class="main-nav clearfix">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!--end: #header -->
+    <div id="home-slider">
+        <div class="md-slide-items md-slider" id="md-slider-1" data-thumb-width="105" data-thumb-height="70">
+        <div class="md-slide-item slide-2" data-timeout="4000">
+                <div class="md-mainimg"><img src="images/ex/th-slide2.jpg" alt=""></div>
+                <div class="md-objects">
+                    <div class="md-object slide-with-background" data-x="20" data-y="58" data-width="500" data-height="170" data-padding-top="30" data-padding-bottom="30" data-padding-left="35" data-padding-right="35" data-start="300" data-stop="3600" data-easein="random" data-easeout="keep">
+                        <h2 class="rs slide-title">All Unite</h2>
+                        <p class="rs slide-description2">We stand united, facing the big responsibility to change our country into a nation of justice, solidarity, humanity and green development.</p>
+                    </div>
+                </div>
+            </div>
+			<div class="md-slide-item slide-0" data-timeout="6000">
+				<div class="md-mainimg"><img src="images/ex/th-slide0.jpg" alt=""></div>
+				<div class="md-objects">
+					<div class="md-object rs slide-title" data-x="20" data-y="38" data-width="480" data-height="30" data-start="700" data-stop="5500" data-easein="random" data-easeout="keep">
+						<p style="color:black;">Searching to help peaple?</p>
+					</div>
+					<div class="md-object rs slide-description" data-x="20" data-y="160" data-width="480" data-height="90" data-start="1400" data-stop="7500" data-easein="random" data-easeout="keep">
+						<p style="color:black;">The life of a man consists not in seeing visions and in dreaming dreams, but in active charity and in willing service.</p>
+					</div>
+					<div class="md-object rs" data-x="20" data-y="260" data-width="120" data-height="23" data-padding-top="9" data-padding-bottom="7" data-padding-left="10" data-padding-right="10" data-start="1800" data-stop="7500" data-easein="random" data-easeout="keep">
+					</div>
+					<div class="md-object" data-x="495" data-y="0" data-width="612" data-height="365" data-start="1800" data-stop="7500" data-easein="fadeInRight" data-easeout="keep" style=""><img src="images/ex/th-slide-man.png" alt="Search Money for Your Creative Ideas" width="612" height="365" /></div>
+				</div>
+			</div>
+			<div class="md-slide-item slide-1" data-timeout="6000">
+				<div class="md-mainimg"><img src="images/ex/th-slide1.jpg" alt=""></div>
+				<div class="md-objects">
+					
+				</div>
+			</div>
+			
+		</div>
+    </div><!--end: #home-slider -->
+    <div class="home-feature-category">
+        <div class="container_12 clearfix">
+            <div class="grid_4 left-lst-category">
+                <div class="wrap-lst-category" style="margin-top:17px;">
+                    <h3 class="title-welcome rs">Welcome to TunInvest!</h3>
+                    <p class="description rs">Help us make Tunisia a better country</p>
+                    <nav class="lst-category">
+                        <ul class="rs nav nav-category">
+                            <li ng-repeat="cat in category">
+                                <a href="" ng-click="changeCategory(cat.id)">
+                                    {{cat.name}}
+                                    <span class="count-val">{{cat.count}}</span>
+                                    <i class="icon iPlugGray"></i>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                        <p class="rs view-all-category">
+                            <a href="category.html" class="be-fc-orange"></a>
+                        </p>
+                    </nav><!--end: .lst-category -->
+                </div>
+            </div><!--end: .left-lst-category -->
+            <div class="grid_8 marked-category">
+                <div class="wrap-title clearfix">
+                    <h2 class="title-mark rs">Staff Picks: <span class="fc-orange">{{bestproject.category}}</span></h2>
+                   
+                </div>
+                <div class="box-marked-project project-short">
+                    <div class="top-project-info">
+                        <div class="content-info-short clearfix">
+                            <a href="#" class="thumb-img">
+                                <img src="{{bestproject.imageURL}}"  alt="$TITLE">
+                            </a>
+                            <div class="wrap-short-detail" style="margin-top:20px;">
+                                <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">{{bestproject.name}}</a></h3>
+                                <p class="rs tiny-desc">by <a href="profile.html" class="fw-b fc-gray be-fc-orange">{{bestproject.addedby}}</a></p>
+                                <p class="rs title-description">{{bestproject.subject}}</p>
+                            </div>
+                            
+                        </div>
+                    </div><!--end: .top-project-info -->
+                    <div class="bottom-project-info clearfix">
+                        <div class="project-progress sys_circle_progress" data-percent="{{(bestproject.current / bestproject.goal) * 100}}">
+                            <div class="sys_holder_sector"></div>
+                        </div>
+                        <div class="group-fee clearfix">
+                            <div class="fee-item">
+                                <p class="rs lbl">Bankers</p>
+                                <span class="val">{{bestproject.bankers}}</span>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="fee-item">
+                                <p class="rs lbl">Pledged</p>
+                                <span class="val">TND{{bestproject.current}}</span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div><!--end: .marked-category -->
+            <div class="clear"></div>
+        </div>
+    </div><!--end: .home-feature-category -->
+    <div class="home-popular-project">
+        <div class="container_12">
+            <div class="grid_12 wrap-title">
+                <h2 class="common-title">Popular</h2>
+            </div>
+            <div class="clear"></div>
+            <div class="lst-popular-project clearfix">
+                <div class="grid_3" ng-repeat="y in projects">
+                    <div class="project-short sml-thumb">
+                        <div class="top-project-info">
+                            <div class="content-info-short clearfix">
+                                <a href="#" class="thumb-img">
+                                    <img src="{{y.imageURL}}" ng-click="selectproject(y.name)" style="height:126px"alt="$TITLE">
+                                </a>
+                                <div class="wrap-short-detail">
+                                    <h3 class="rs acticle-title"><a class="be-fc-orange" href="project.html">{{y.name}}</a></h3>
+                                    <p class="rs tiny-desc">by <a href="profile.html" class="fw-b fc-gray be-fc-orange">{{y.addedby}}</a></p>
+                                    <p class="rs title-description">{{y.subject}}</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom-project-info clearfix">
+                            <div class="line-progress">
+                                <div class="bg-progress">
+                                    <span  style="width: {{(y.current / y.goal) * 100}}%"></span>
+                                </div>
+                            </div>
+                            <div class="group-fee clearfix">
+                                <div class="fee-item">
+                                    <p class="rs lbl">Funded</p>
+                                    <span class="val">{{perc((y.current / y.goal) * 100)}}%</span>
+                                </div>
+                                <div class="sep"></div>
+                                <div class="fee-item">
+                                    <p class="rs lbl">Pledged</p>
+                                    <span class="val">TND{{y.current}}</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end: .grid_3 > .project-short-->
+               
+            </div>
+        </div>
+    </div><!--end: .home-popular-project -->
+    
+
+
+    <footer id="footer">
+        <div class="container_12 main-footer">
+            <div class="grid_3 about-us">
+                <h3 class="rs title">About</h3>
+                <p class="rs description">This is a way to make good and proove that humanity still existe </p>
+                <p class="rs email"><a class="fc-default  be-fc-orange" href="mailto:info@megadrupal.com">info@creativelab.com</a></p>
+                <p class="rs">+(216) 55 - 555 - 555</p>
+            </div><!--end: .contact-info -->
+            <div class="grid_3 recent-tweets">
+                <h3 class="rs title">Recent Tweets</h3>
+                <div class="lst-tweets" id="sys_lst_tweets">
+                    
+                </div>
+            </div><!--end: .recent-tweets -->
+            <div class="clear clear-2col"></div>
+            <div class="grid_3 email-newsletter">
+                <h3 class="rs title">Newsletter Signup</h3>
+                <div class="inner">
+                    <p class="rs description">To keep you're self up to date please subscribe to our newsletter</p>
+                    <form action="#">
+                        <div class="form form-email">
+                            <label class="lbl" for="txt-email">
+                                <input id="txt-email" type="text" class="txt fill-width" placeholder="Enter your e-mail address"/>
+                            </label>
+                            <button class="btn btn-green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div><!--end: .email-newsletter -->
+            <div class="grid_3">
+                <h3 class="rs title">Discover &amp; Create</h3>
+                <div class="footer-menu">
+                    <ul class="rs">
+                        <li><a class="be-fc-orange" href="#">What is TunInvest</a></li>
+                        <li><a class="be-fc-orange" href="#">Start a project</a></li>
+                        <li><a class="be-fc-orange" href="#">Project Guidlines</a></li>
+                        <li><a class="be-fc-orange" href="#">Press</a></li>
+                        <li><a class="be-fc-orange" href="#">Stats</a></li>
+                    </ul>
+                    <ul class="rs">
+                        <li><a class="be-fc-orange" href="#">Staff Picks</a></li>
+                        <li><a class="be-fc-orange" href="#">Popular</a></li>
+                        <li><a class="be-fc-orange" href="#">Recent</a></li>
+                        <li><a class="be-fc-orange" href="#">Small Projects</a></li>
+                        <li><a class="be-fc-orange" href="#">Most Funded</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="copyright">
+            <div class="container_12">
+                <div class="grid_12">
+                    <a class="logo-footer" href="index.html"><img src="images/logo-2.png" style="width:128px" alt="$SITE_NAME"/></a>
+                    <p class="rs term-privacy">
+                        <a class="fw-b be-fc-orange" href="single.html">Terms & Conditions</a>
+                        <span class="sep">/</span>
+                        <a class="fw-b be-fc-orange" href="single.html">Privacy Policy</a>
+                        <span class="sep">/</span>
+                        <a class="fw-b be-fc-orange" href="#">FAQ</a>
+                    </p>
+                    <p class="rs ta-c fc-gray-dark site-copyright">HTML by <a href="http://megadrupal.com" title="Drupal Developers" target="_blank">CreativeLab</a>. Designed by <a href="http://bestwebsoft.com/" title="Web development company" target="_blank">BestWebSoft</a>.</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </footer><!--end: #footer -->
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20585382-5', 'megadrupal.com');
+  ga('send', 'pageview');
+
+</script>
+
+<div class="popup-common" id="sys_popup_common" ng-show="!access">
+    <div class="overlay-bl-bg"></div>
+    <div class="container_12 pop-content">
+        <div class="grid_12 wrap-btn-close ta-r">
+            <i class="icon iBigX closePopup"></i>
+        </div>
+        <div class="grid_6 prefix_1">
+            <div class="form login-form">
+                <form action="#">
+                    <h3 class="rs title-form">Register</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">New to TunInvest?</h4>
+                        <p class="rs">A TunInvest account is required to continue.</p>
+                        <div class="form-action">
+                            <label for="txt_name">
+                                <input id="txt_name" class="txt fill-width" type="text" placeholder="Enter full name"/>
+                            </label>
+                            <div class="wrap-2col clearfix">
+                                <div class="col">
+                                    <label for="txt_email">
+                                        <input id="txt_email" class="txt fill-width" type="email" placeholder="Enter your e-mail address"/>
+                                    </label>
+                                    <label for="txt_re_email">
+                                        <input id="txt_re_email" class="txt fill-width" type="email" placeholder="Re-enter your e-mail adress"/>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label for="txt_password">
+                                        <input id="txt_password" class="txt fill-width" type="password" placeholder="Enter password"/>
+                                    </label>
+                                    <label for="txt_re_password">
+                                        <input id="txt_re_password" class="txt fill-width" type="password" placeholder="Re-enter password"/>
+                                    </label>
+                                </div>
+                            </div>
+                            <p class="rs pb10">By signing up, you agree to our <a href="#" class="fc-orange">terms of use</a> and <a href="#" class="fc-orange">privacy policy</a>.</p>
+                            <p class="rs ta-c">
+                                <button class="btn btn-red btn-submit" type="submit">Register</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="grid_4">
+            <div class="form login-form">
+                    <h3 class="rs title-form">Login</h3>
+                    <div class="box-white">
+                        <h4 class="rs title-box">Already Have an Account?</h4>
+                        <p class="rs">Please log in to continue.</p>
+                        <div class="form-action">
+                            <label for="txt_email_login">
+                                <input id="txt_email_login" class="txt fill-width" type="email" placeholder="Enter your e-mail address" ng-model="email"/>
+                            </label>
+                            <label for="txt_password_login">
+                                <input id="txt_password_login" ng-model="password" class="txt fill-width" type="password" placeholder="Enter password"/>
+                            </label>
+
+                            <label for="chk_remember" class="rs pb20 clearfix">
+                                <input id="chk_remember" type="checkbox" class="chk-remember"/>
+                                <span class="lbl-remember">Remember me</span>
+                            </label>
+                            <p class="rs ta-c pb10">
+                                <button class="btn btn-red btn-submit" ng-click="login(email,password)">Login</button>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

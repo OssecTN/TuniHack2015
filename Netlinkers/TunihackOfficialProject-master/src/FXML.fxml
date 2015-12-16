@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: l; -fx-background-color: light grey;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomeController">
+   <children>
+      <TabPane layoutY="57.0" prefHeight="369.0" prefWidth="612.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="All Posts">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.48360655737704916" prefHeight="341.0" prefWidth="612.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="96.0" text="Vol" />
+                                    <Hyperlink layoutX="9.0" layoutY="113.0" prefHeight="23.0" prefWidth="209.0" text="Imed Trabelsi et Moaz, neveux de Ben Ali, auraient volé le yacht d’un homme d’affaires français" textFill="#861313" />
+                                    <Label layoutX="9.0" layoutY="30.0" text="Abus de pouvoir" />
+                                    <Hyperlink layoutY="47.0" prefHeight="23.0" prefWidth="194.0" text="posséder des biens ou des terres au bon endroit peut être soit une aubaine" textFill="#791f1f" />
+                                    <Button layoutX="77.0" layoutY="257.0" mnemonicParsing="false" style="-fx-background-radius: 30, 30, 29, 28;" text="add a post" />
+                                    <Label layoutX="19.0" layoutY="157.0" />
+                                    <Hyperlink layoutX="14.0" layoutY="174.0" prefHeight="23.0" prefWidth="209.0" text="le 13 Decembre 2013..." textFill="#9a1414" />
+                                    <Label layoutX="14.0" layoutY="157.0" text="TuniLeaks" />
+                                    <Hyperlink layoutX="3.0" fx:id ="" layoutY="70.0" text="details" onKeyPressed="#ShowDetails" />
+                                    <Hyperlink layoutX="56.0" layoutY="70.0" text="dowload" onKeyPressed="#Download"/>
+                                    <Hyperlink layoutX="3.0" layoutY="136.0" text="details" onKeyPressed="#ShowDetails"/>
+                                    <Hyperlink layoutX="56.0" layoutY="136.0" text="download" onKeyPressed="#Download" />
+                                    <Hyperlink layoutX="2.0" layoutY="197.0" text="details" onKeyPressed="#ShowDetails"/>
+                                    <Hyperlink layoutX="58.0" layoutY="197.0" text="download" onKeyPressed="#Download"/>
+                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="338.0" prefWidth="334.0" style="-fx-background-color: light grey;" />
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+     
+            <Tab id="add_post" text="add a post">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="1.0" layoutY="167.0" prefHeight="3.0" prefWidth="612.0" />
+                        <Separator layoutX="301.0" layoutY="3.0" orientation="VERTICAL" prefHeight="334.0" prefWidth="10.0" />
+                        <ImageView id="add_photo" onMouseClicked="#handleIt" fx:id="add_image" fitHeight="38.0" fitWidth="38.0" layoutX="311.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image.png" />
+                           </image></ImageView>
+                        <ImageView fx:id="add_video" onMouseClicked="#handleIt" fitHeight="44.0" fitWidth="48.0" layoutX="27.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@video.jpg" />
+                           </image></ImageView>
+                        <ImageView id="add_record" onMouseClicked="#handleIt" fitHeight="46.0" fitWidth="46.0" layoutX="320.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@record.png" />
+                           </image></ImageView>
+                        <ImageView id="pdf" fx:id="add_record"  onMouseClicked="#handleIt" fitHeight="44.0" fitWidth="47.0" layoutX="21.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pdf.png" />
+                           </image></ImageView>
+                        <Button fx:id="b2" layoutX="125.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleIt" style="-fx-background-radius: 30, 30, 29, 28;" text="Share your doc" textFill="#00004d" />
+                        <Button layoutX="408.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleIt" style="-fx-background-radius: 30, 30, 29, 28;" text="Share your pictutre" textFill="#1e084d" />
+                        <Button layoutX="125.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleIt" style="-fx-background-radius: 30, 30, 29, 28;" text="Share your video" textFill="#00004d" />
+                        <Button layoutX="413.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleIt" style="-fx-background-radius: 30, 30, 29, 28;" text="Share your voice " textFill="#00004d" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab id="settings" text="settings">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: light grey;">
+                     <children>
+                        <Label layoutX="267.0" layoutY="142.0" prefHeight="17.0" prefWidth="78.0" text="Max size from file System" />
+                        <TextField layoutX="267.0" layoutY="138.0" prefHeight="17.0" prefWidth="78.0" style="-fx-background-radius: 30, 30, 29, 28;" />
+                        <Button layoutX="245.0" layoutY="84.0" style="-fx-background-radius: 30, 30, 29, 28;" text="Create New Identity" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="1.0" layoutY="14.0" prefHeight="38.0" prefWidth="464.0" text="Platform for whistle blowers" textAlignment="CENTER">
+         <font>
+            <Font name="Courier New Bold" size="23.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#ae2e2e" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="38.0" fitWidth="93.0" layoutX="446.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@sharer.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
